@@ -46,7 +46,7 @@ const mainStaff = [
     avatar: '/images/sica.png',
     banner: '/images/sicabanner.gif',
     color: 'bg-green-400',
-    tiktokUrl: 'https://www.tiktok.com/@aintnine',
+    tiktokUrl: 'https://www.tiktok.com',
     description:
       'Focused on protecting the community and making the server enjoyable for everyone.',
     discordUrl: 'https://discord.gg/VfGDjPxWvD',
@@ -88,7 +88,7 @@ const mainStaff = [
     avatar: '/images/lau.png',
     banner: '/images/laubanner.gif',
     color: 'bg-red-400',
-    tiktokUrl: 'https://www.tiktok.com/@jisatsu.e',
+    tiktokUrl: 'https://www.tiktok.com.e',
     description:
       'Always available to assist members and handle situations professionally.',
     discordUrl: 'https://discord.gg/VfGDjPxWvD',
@@ -102,7 +102,7 @@ const mainStaff = [
   avatar: '/images/mik.png',
   banner: '/images/mikbanner.gif',
   color: 'bg-red-400',
-  tiktokUrl: 'https://www.tiktok.com/',
+  tiktokUrl: 'https://www.tiktok.com',
   description:
     'Working behind the scenes to keep the community alive and united.',
   discordUrl: 'https://discord.gg/VfGDjPxWvD',
