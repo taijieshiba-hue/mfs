@@ -207,6 +207,18 @@ const otherMembers = [
     profileUrl: 'https://discord.gg/VfGDjPxWvD',
     statusColor: 'bg-yellow-400',
   },
+
+    {
+    name: 'lezzy E6 BOY',
+    role: 'Real G',
+    avatar: '/images/le.png',
+
+    description:
+      'Hall of Fame.',
+    discordUrl: 'https://discord.gg/VfGDjPxWvD',
+    profileUrl: 'https://discord.gg/VfGDjPxWvD',
+    statusColor: 'bg-yellow-400',
+  },
 ]
 
 const eliteMembers = [
@@ -233,6 +245,7 @@ const eliteMembers = [
     profileUrl: 'https://discord.gg/VfGDjPxWvD',
     statusColor: 'bg-red-400',
   },
+
 
   {
     name: 'zordy',
