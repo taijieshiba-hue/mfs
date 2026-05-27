@@ -736,80 +736,245 @@ useEffect(() => {
         </motion.p>
 
 {/* MAIN STAFF */}
-<div className="mt-8 sm:mt-12 w-full max-w-[1200px] px-2">
+<div className="mt-8 sm:mt-12 w-full max-w-[1250px] px-2">
 
-  <div className="
-    grid
-    grid-cols-3
-    sm:grid-cols-3
-    lg:grid-cols-5
-    gap-2 sm:gap-4
-  ">
+  <div
+    className="
+      grid
+      grid-cols-2
+      sm:grid-cols-3
+      lg:grid-cols-5
+      gap-2 sm:gap-3
+    "
+  >
 
     {mainStaff.map((item, i) => (
       <motion.div
         key={i}
         initial={{
           opacity: 0,
-          y: 30,
+          y: 40,
+          scale: 0.9,
         }}
         animate={{
           opacity: 1,
           y: 0,
+          scale: 1,
         }}
         transition={{
-          duration: 0.5,
+          duration: 0.55,
           delay: i * 0.08,
+          type: 'spring',
         }}
         whileHover={{
-          y: -8,
+          y: -12,
           scale: 1.03,
         }}
         onClick={() => setSelected(item)}
         className="
           group relative overflow-hidden
-          rounded-[20px]
+          max-h-[320px]
+          rounded-[22px] sm:rounded-[26px]
           border border-white/10
-          bg-black/40
-          backdrop-blur-2xl
+          bg-gradient-to-b
+          from-white/[0.08]
+          via-black/40
+          to-black/80
+          backdrop-blur-3xl
           cursor-pointer
           min-w-0
+          shadow-[0_0_60px_rgba(255,0,0,0.06)]
         "
       >
 
         {/* BACKGROUND */}
         <div className="absolute inset-0 overflow-hidden">
+
           <motion.img
             whileHover={{
-              scale: 1.06,
+              scale: 1.12,
             }}
             transition={{
-              duration: 0.5,
+              duration: 0.8,
             }}
             src={item.banner}
-            className="w-full h-full object-cover opacity-25"
+            className="w-full h-full object-cover opacity-30"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black" />
+          {/* DARK OVERLAY */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black" />
+
+          {/* RED GLOW */}
+          <motion.div
+            animate={{
+              opacity: [0.15, 0.3, 0.15],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 4,
+            }}
+            className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-40 h-40 rounded-full bg-red-500/20 blur-3xl"
+          />
+
+          {/* SHINE */}
+          <motion.div
+            animate={{
+              x: ['-150%', '250%'],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 5,
+              ease: 'linear',
+            }}
+            className="absolute inset-0 w-24 bg-white/5 skew-x-12 blur-xl"
+          />
         </div>
 
+{/* TOP BAR */}
+<div className="relative z-10 flex items-center justify-between px-3 pt-3">
+
+  {/* LIVE STATUS */}
+  <div className="flex items-center gap-2 px-2 py-1 rounded-full bg-black/40 border border-white/10 backdrop-blur-xl">
+    <motion.div
+      animate={{
+        scale: [1, 1.3, 1],
+        opacity: [1, 0.5, 1],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 2,
+      }}
+      className={`w-2 h-2 rounded-full ${item.statusColor}`}
+    />
+
+    <span className="text-[9px] uppercase tracking-[2px] text-gray-300">
+      Online
+    </span>
+  </div>
+
+  {/* ROLE BADGE */}
+  <motion.div
+    whileHover={{
+      scale: 1.06,
+    }}
+    animate={{
+      boxShadow: [
+        '0 0 10px rgba(255,255,255,0.08)',
+        '0 0 22px rgba(255,0,0,0.35)',
+        '0 0 10px rgba(255,255,255,0.08)',
+      ],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 2.5,
+    }}
+    className="
+      relative overflow-hidden
+      px-3 py-[6px]
+      rounded-full
+      border border-red-500/30
+      bg-gradient-to-r
+      from-red-500/20
+      via-white/10
+      to-red-500/20
+      backdrop-blur-xl
+      shadow-[0_0_20px_rgba(255,0,0,0.18)]
+    "
+  >
+
+    {/* SHINE */}
+    <motion.div
+      animate={{
+        x: ['-120%', '220%'],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 3,
+        ease: 'linear',
+      }}
+      className="
+        absolute inset-0
+        w-10
+        bg-white/20
+        skew-x-12
+        blur-md
+      "
+    />
+
+    {/* TEXT */}
+    <p
+      className="
+        relative z-10
+        text-[10px]
+        sm:text-[11px]
+        font-black
+        uppercase
+        tracking-[2.5px]
+        text-red-200
+        drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]
+      "
+    >
+      ✦ {item.role}
+    </p>
+  </motion.div>
+
+</div>
+
         {/* CONTENT */}
-        <div className="relative z-10 flex flex-col items-center px-2 py-3 sm:px-4 sm:py-5">
+        <div className="relative z-10 flex flex-col items-center px-3 pb-4 pt-2">
 
           {/* AVATAR */}
-          <div className="relative">
+          <div className="relative mt-3">
 
+            {/* OUTER GLOW */}
+            <motion.div
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0.3, 0.55, 0.3],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 3,
+              }}
+              className="absolute inset-0 rounded-full bg-white/20 blur-2xl"
+            />
+
+            {/* ROTATING RING */}
+            <motion.div
+              animate={{
+                rotate: 360,
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 10,
+                ease: 'linear',
+              }}
+              className="absolute inset-[-7px] rounded-full border border-white/10"
+            />
+
+            {/* IMAGE */}
             <motion.img
               whileHover={{
-                scale: 1.06,
+                scale: 1.08,
+              }}
+              animate={{
+                y: [0, -3, 0],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 3,
               }}
               src={item.avatar}
               className="
-                w-12 h-12
-                sm:w-20 sm:h-20
+                relative
+                w-14 h-14
+sm:w-20 sm:h-20
                 rounded-full
                 object-cover
-                border-2 border-white/20
+                border-[3px]
+                border-white/20
+                shadow-[0_0_40px_rgba(255,255,255,0.12)]
               "
             />
 
@@ -822,76 +987,117 @@ useEffect(() => {
                 repeat: Infinity,
                 duration: 2,
               }}
-              className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-black ${item.color}`}
+              className={`
+                absolute bottom-1 right-1
+                w-4 h-4
+                rounded-full
+                border-[3px]
+                border-black
+                ${item.statusColor}
+              `}
             />
           </div>
 
           {/* NAME */}
-          <h2 className="
-            mt-2
-            text-[10px]
-            sm:text-[15px]
-            font-bold
-            uppercase
-            tracking-[1px]
-            text-center
-            truncate
-            w-full
-          ">
+          <motion.h2
+            animate={{
+              textShadow: [
+                '0 0 10px rgba(255,255,255,0.1)',
+                '0 0 20px rgba(255,255,255,0.35)',
+                '0 0 10px rgba(255,255,255,0.1)',
+              ],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 3,
+            }}
+            className="
+              mt-5
+              text-[11px]
+sm:text-[15px]
+              font-black
+              uppercase
+              tracking-[2px]
+              text-center
+              truncate
+              w-full
+            "
+          >
             {item.name}
-          </h2>
-
-          {/* ROLE */}
-          <div className="mt-1 px-2 py-[3px] rounded-full bg-white/10 border border-white/10">
-            <p className="text-[8px] sm:text-[10px] uppercase tracking-[1px] text-gray-300 text-center">
-              {item.role}
-            </p>
-          </div>
+          </motion.h2>
 
           {/* DESCRIPTION */}
-          <p className="
-            mt-1
-            text-[8px]
-            sm:text-[11px]
-            text-gray-400
-            text-center
-            leading-tight
-            line-clamp-2
-          ">
+          <p
+            className="
+              mt-2
+text-[9px]
+sm:text-[11px]
+              text-gray-400
+              text-center
+              leading-relaxed
+              line-clamp-2
+              max-w-[220px]
+            "
+          >
             {item.description}
           </p>
 
+          {/* DIVIDER */}
+          <div className="w-[70%] h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mt-4" />
+
           {/* SOCIALS */}
-          <div className="mt-2 flex items-center gap-1 sm:gap-2">
+          <div className="mt-4 flex items-center gap-3">
 
-            <div className="
-              w-6 h-6
-              sm:w-7 sm:h-7
-              rounded-xl
-              bg-indigo-500/15
-              border border-indigo-500/20
-              flex items-center justify-center
-            ">
-              <FaDiscord className="text-indigo-400 text-[10px]" />
-            </div>
+            {/* DISCORD */}
+            <motion.div
+              whileHover={{
+                y: -3,
+                scale: 1.08,
+              }}
+              className="
+                w-7 h-7 sm:w-8 sm:h-8
+                rounded-2xl
+                bg-indigo-500/15
+                border border-indigo-500/20
+                flex items-center justify-center
+                shadow-[0_0_20px_rgba(99,102,241,0.15)]
+              "
+            >
+              <FaDiscord className="text-indigo-400 text-sm" />
+            </motion.div>
 
-            <div className="
-              w-6 h-6
-              sm:w-7 sm:h-7
-              rounded-xl
-              bg-white/10
-              border border-white/10
-              flex items-center justify-center
-            ">
-              <FaTiktok className="text-white text-[10px]" />
-            </div>
+            {/* TIKTOK */}
+            <motion.div
+              whileHover={{
+                y: -3,
+                scale: 1.08,
+              }}
+              className="
+                w-9 h-9
+                rounded-2xl
+                bg-white/10
+                border border-white/10
+                flex items-center justify-center
+              "
+            >
+              <FaTiktok className="text-white text-sm" />
+            </motion.div>
 
           </div>
+
+          {/* BOTTOM GLOW LINE */}
+          <div className="mt-5 h-[1px] w-full bg-gradient-to-r from-transparent via-red-500/20 to-transparent" />
+
         </div>
       </motion.div>
     ))}
   </div>
 </div>
+
+
+
+
+
         {/* FIRST MARQUEE */}
         <div
           className="mt-10 w-full flex justify-center overflow-hidden"
