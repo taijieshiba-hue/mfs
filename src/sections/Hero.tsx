@@ -723,7 +723,14 @@ useEffect(() => {
         </motion.p>
 
 {/* MAIN STAFF */}
-<div className="mt-8 sm:mt-12 grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 px-2 max-w-[1100px]">
+<div className="
+  mt-8 sm:mt-12
+  grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5
+  gap-2 sm:gap-4
+  px-2
+  w-full
+  max-w-[1100px]
+">  
 
   {mainStaff.map((item, i) => (
     <motion.div
@@ -777,7 +784,7 @@ useEffect(() => {
       />
 
       {/* CONTENT */}
-      <div className="relative z-10 flex flex-col items-center px-3 py-4 sm:px-4 sm:py-5">
+      <div className="relative z-10 flex flex-col items-center px-2 py-3 sm:px-4 sm:py-5">
 
         {/* AVATAR */}
         <div className="relative">
@@ -801,7 +808,7 @@ useEffect(() => {
               scale: 1.06,
             }}
             src={item.avatar}
-            className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-white/20 shadow-[0_0_25px_rgba(255,255,255,0.12)]"
+            className="relative w-14 h-14 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-white/20 shadow-[0_0_25px_rgba(255,255,255,0.12)]"
           />
 
           {/* STATUS */}
@@ -848,7 +855,7 @@ useEffect(() => {
         </div>
 
         {/* NAME */}
-        <h2 className="mt-3 text-sm sm:text-[15px] font-bold uppercase tracking-[1px] text-center">
+        <h2 className="mt-2 text-[11px] sm:text-[15px] font-bold uppercase tracking-[1px] text-center">
           {item.name}
         </h2>
 
@@ -860,7 +867,7 @@ useEffect(() => {
         </div>
 
         {/* MINI DESCRIPTION */}
-        <p className="mt-2 text-[10px] sm:text-[11px] text-gray-400 text-center leading-relaxed line-clamp-2">
+        <p className="mt-1 text-[9px] sm:text-[11px] text-gray-400 text-center leading-relaxed line-clamp-2">
           {item.description}
         </p>
 
