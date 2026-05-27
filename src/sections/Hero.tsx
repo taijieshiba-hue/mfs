@@ -723,179 +723,161 @@ useEffect(() => {
         </motion.p>
 
 {/* MAIN STAFF */}
-<div className="
-  mt-8 sm:mt-12
-  grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5
-  gap-2 sm:gap-4
-  px-2
-  w-full
-  max-w-[1100px]
-">  
+<div className="mt-8 sm:mt-12 w-full max-w-[1200px] px-2">
 
-  {mainStaff.map((item, i) => (
-    <motion.div
-      key={i}
-      initial={{
-        opacity: 0,
-        y: 30,
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-      }}
-      transition={{
-        duration: 0.5,
-        delay: i * 0.08,
-      }}
-      whileHover={{
-        y: -8,
-        scale: 1.03,
-      }}
-      onClick={() => setSelected(item)}
-      className="group relative overflow-hidden rounded-[26px] border border-white/10 bg-black/40 backdrop-blur-2xl cursor-pointer"
-    >
+  <div className="
+    grid
+    grid-cols-3
+    sm:grid-cols-3
+    lg:grid-cols-5
+    gap-2 sm:gap-4
+  ">
 
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.img
-          whileHover={{
-            scale: 1.06,
-          }}
-          transition={{
-            duration: 0.5,
-          }}
-          src={item.banner}
-          className="w-full h-full object-cover opacity-25"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black" />
-      </div>
-
-      {/* LIGHT */}
+    {mainStaff.map((item, i) => (
       <motion.div
+        key={i}
+        initial={{
+          opacity: 0,
+          y: 30,
+        }}
         animate={{
-          opacity: [0.2, 0.5, 0.2],
+          opacity: 1,
+          y: 0,
         }}
         transition={{
-          repeat: Infinity,
-          duration: 3,
+          duration: 0.5,
+          delay: i * 0.08,
         }}
-        className="absolute -top-10 left-1/2 -translate-x-1/2 w-28 h-28 bg-white/10 rounded-full blur-3xl"
-      />
+        whileHover={{
+          y: -8,
+          scale: 1.03,
+        }}
+        onClick={() => setSelected(item)}
+        className="
+          group relative overflow-hidden
+          rounded-[20px]
+          border border-white/10
+          bg-black/40
+          backdrop-blur-2xl
+          cursor-pointer
+          min-w-0
+        "
+      >
 
-      {/* CONTENT */}
-      <div className="relative z-10 flex flex-col items-center px-2 py-3 sm:px-4 sm:py-5">
-
-        {/* AVATAR */}
-        <div className="relative">
-
-          {/* RING */}
-          <motion.div
-            animate={{
-              rotate: 360,
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 10,
-              ease: 'linear',
-            }}
-            className="absolute inset-[-6px] rounded-full border border-dashed border-white/15"
-          />
-
-          {/* IMAGE */}
+        {/* BACKGROUND */}
+        <div className="absolute inset-0 overflow-hidden">
           <motion.img
             whileHover={{
               scale: 1.06,
             }}
-            src={item.avatar}
-            className="relative w-14 h-14 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-white/20 shadow-[0_0_25px_rgba(255,255,255,0.12)]"
+            transition={{
+              duration: 0.5,
+            }}
+            src={item.banner}
+            className="w-full h-full object-cover opacity-25"
           />
 
-          {/* STATUS */}
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 2,
-            }}
-            className={`absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full border-2 border-black ${item.color}`}
-          >
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black" />
+        </div>
 
-            {/* PING EFFECT */}
+        {/* CONTENT */}
+        <div className="relative z-10 flex flex-col items-center px-2 py-3 sm:px-4 sm:py-5">
+
+          {/* AVATAR */}
+          <div className="relative">
+
+            <motion.img
+              whileHover={{
+                scale: 1.06,
+              }}
+              src={item.avatar}
+              className="
+                w-12 h-12
+                sm:w-20 sm:h-20
+                rounded-full
+                object-cover
+                border-2 border-white/20
+              "
+            />
+
+            {/* STATUS */}
             <motion.div
               animate={{
-                scale: [1, 2.2],
-                opacity: [0.6, 0],
+                scale: [1, 1.2, 1],
               }}
               transition={{
                 repeat: Infinity,
                 duration: 2,
-                ease: 'easeOut',
               }}
-              className={`absolute inset-0 rounded-full ${item.color}`}
+              className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-black ${item.color}`}
             />
+          </div>
 
-          </motion.div>
+          {/* NAME */}
+          <h2 className="
+            mt-2
+            text-[10px]
+            sm:text-[15px]
+            font-bold
+            uppercase
+            tracking-[1px]
+            text-center
+            truncate
+            w-full
+          ">
+            {item.name}
+          </h2>
 
-          {/* ONLINE TEXT */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-            className="absolute -bottom-6 left-1/2 -translate-x-1/2 pointer-events-none"
-          >
-            <div className="px-2 py-[3px] rounded-full bg-black/70 border border-white/10 backdrop-blur-xl whitespace-nowrap">
-              <p className="text-[8px] uppercase tracking-[2px] text-gray-300">
-                Active Now
-              </p>
-            </div>
-          </motion.div>
+          {/* ROLE */}
+          <div className="mt-1 px-2 py-[3px] rounded-full bg-white/10 border border-white/10">
+            <p className="text-[8px] sm:text-[10px] uppercase tracking-[1px] text-gray-300 text-center">
+              {item.role}
+            </p>
+          </div>
 
-        </div>
-
-        {/* NAME */}
-        <h2 className="mt-2 text-[11px] sm:text-[15px] font-bold uppercase tracking-[1px] text-center">
-          {item.name}
-        </h2>
-
-        {/* ROLE */}
-        <div className="mt-1 px-2 py-[4px] rounded-full bg-white/10 border border-white/10">
-          <p className="text-[9px] sm:text-[10px] uppercase tracking-[2px] text-gray-300">
-            {item.role}
+          {/* DESCRIPTION */}
+          <p className="
+            mt-1
+            text-[8px]
+            sm:text-[11px]
+            text-gray-400
+            text-center
+            leading-tight
+            line-clamp-2
+          ">
+            {item.description}
           </p>
+
+          {/* SOCIALS */}
+          <div className="mt-2 flex items-center gap-1 sm:gap-2">
+
+            <div className="
+              w-6 h-6
+              sm:w-7 sm:h-7
+              rounded-xl
+              bg-indigo-500/15
+              border border-indigo-500/20
+              flex items-center justify-center
+            ">
+              <FaDiscord className="text-indigo-400 text-[10px]" />
+            </div>
+
+            <div className="
+              w-6 h-6
+              sm:w-7 sm:h-7
+              rounded-xl
+              bg-white/10
+              border border-white/10
+              flex items-center justify-center
+            ">
+              <FaTiktok className="text-white text-[10px]" />
+            </div>
+
+          </div>
         </div>
-
-        {/* MINI DESCRIPTION */}
-        <p className="mt-1 text-[9px] sm:text-[11px] text-gray-400 text-center leading-relaxed line-clamp-2">
-          {item.description}
-        </p>
-
-        {/* SOCIALS */}
-        <div className="mt-3 flex items-center gap-2">
-
-          <motion.div
-            whileHover={{
-              scale: 1.1,
-            }}
-            className="w-7 h-7 rounded-xl bg-indigo-500/15 border border-indigo-500/20 flex items-center justify-center"
-          >
-            <FaDiscord className="text-indigo-400 text-[11px]" />
-          </motion.div>
-
-          <motion.div
-            whileHover={{
-              scale: 1.1,
-            }}
-            className="w-7 h-7 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center"
-          >
-            <FaTiktok className="text-white text-[11px]" />
-          </motion.div>
-
-        </div>
-      </div>
-    </motion.div>
-  ))}
+      </motion.div>
+    ))}
+  </div>
 </div>
         {/* FIRST MARQUEE */}
         <div
@@ -909,16 +891,27 @@ useEffect(() => {
                   key={i}
                   whileHover={{ scale: 1.05 }}
                   onClick={() => setSelected(item)}
-                  className="min-w-[110px] sm:min-w-[140px] p-2 sm:p-3 rounded-2xl bg-white/5 border border-white/10 text-center cursor-pointer hover:bg-white/10"
+                  className="
+  min-w-[82px]
+  xs:min-w-[90px]
+  sm:min-w-[140px]
+  p-2 sm:p-3
+  rounded-2xl
+  bg-white/5
+  border border-white/10
+  text-center
+  cursor-pointer
+  hover:bg-white/10
+"
                 >
                   <img
                     src={item.avatar}
                     className="w-8 h-8 sm:w-10 sm:h-10 mx-auto rounded-full mb-2 object-cover"
                   />
 
-                  <p className="text-sm font-semibold">{item.name}</p>
+                  <p className="text-[10px] sm:text-sm font-semibold truncate">{item.name}</p>
 
-                  <p className="text-xs text-gray-500">{item.role}</p>
+                  <p className="text-[8px] sm:text-xs text-gray-500 truncate">{item.role}</p>
                 </motion.div>
               ))}
             </div>
@@ -937,18 +930,36 @@ useEffect(() => {
                   key={i}
                   whileHover={{ y: -5, scale: 1.05 }}
                   onClick={() => setSelected(item)}
-                  className="min-w-[110px] sm:min-w-[140px] p-2 sm:p-3 rounded-2xl bg-white/5 border border-white/10 text-center cursor-pointer hover:bg-white/10"
+                  className="
+  min-w-[82px]
+  xs:min-w-[90px]
+  sm:min-w-[140px]
+  p-2 sm:p-3
+  rounded-2xl
+  bg-white/5
+  border border-white/10
+  text-center
+  cursor-pointer
+  hover:bg-white/10
+"
                 >
                   <img
                     src={item.avatar}
-                    className="w-8 h-8 sm:w-10 sm:h-10 mx-auto rounded-full mb-2 object-cover"
+                    className="
+  w-7 h-7
+  sm:w-10 sm:h-10
+  mx-auto
+  rounded-full
+  mb-2
+  object-cover
+"
                   />
 
-                  <p className="text-sm font-semibold">
+                  <p className="text-[10px] sm:text-sm font-semibold truncate">
                     {item.name}
                   </p>
 
-                  <p className="text-xs text-gray-500">
+                  <p className="text-[8px] sm:text-xs text-gray-500 truncate">
                     {item.role}
                   </p>
                 </motion.div>
