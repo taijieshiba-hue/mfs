@@ -664,6 +664,9 @@ useEffect(() => {
   }
 
   return (
+
+
+
     <section className="relative min-h-screen overflow-x-hidden bg-black text-white">
 
       {/* BACKGROUND */}
@@ -706,34 +709,262 @@ useEffect(() => {
   ))}
 </div>
 
+
+
+
+
       {/* CONTENT */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 py-10">
-<motion.h1
-  animate={{
-    scale: [1, 1.02, 1],
-    textShadow: [
-      '0 0 20px rgba(255,0,0,0.5), 0 0 40px rgba(255,0,0,0.3)',
-      '0 0 35px rgba(255,0,0,1), 0 0 70px rgba(255,0,0,0.7)',
-      '0 0 20px rgba(255,0,0,0.5), 0 0 40px rgba(255,0,0,0.3)',
-    ],
-  }}
-  transition={{
-    repeat: Infinity,
-    duration: 3,
-  }}
-  className="
-    text-4xl sm:text-5xl md:text-[9rem]
-    font-black uppercase text-center leading-none
-    text-red-500
-    tracking-[6px]
-  "
->
-  MFS
-</motion.h1>
 
-        <motion.p className="tracking-[4px] sm:tracking-[8px] text-gray-400 text-xs sm:text-sm mt-2 text-center">
-          Made From Struggle
-        </motion.p>
+
+{/* 🔥 COMPRESSED MFS HERO */}
+<div className="relative flex flex-col items-center justify-center w-full px-4">
+
+  {/* SOFT GLOW */}
+  <motion.div
+    animate={{
+      scale: [1, 1.12, 1],
+      opacity: [0.18, 0.35, 0.18],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 4,
+    }}
+    className="
+      absolute
+      top-1/2 left-1/2
+      -translate-x-1/2 -translate-y-1/2
+      w-[180px]
+      h-[180px]
+      sm:w-[240px]
+      sm:h-[240px]
+      md:w-[320px]
+      md:h-[320px]
+      rounded-full
+      bg-red-500/20
+      blur-3xl
+      pointer-events-none
+    "
+  />
+
+  {/* MINI BADGE */}
+  <motion.div
+    animate={{
+      opacity: [0.65, 1, 0.65],
+      borderColor: [
+        'rgba(239,68,68,0.15)',
+        'rgba(239,68,68,0.4)',
+        'rgba(239,68,68,0.15)',
+      ],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 3,
+    }}
+    className="
+      mb-1.5
+      px-2.5 py-[4px]
+      rounded-full
+      border
+      bg-red-500/10
+      backdrop-blur-xl
+    "
+  >
+    <p
+      className="
+        text-[7px]
+        sm:text-[8px]
+        uppercase
+        tracking-[2.5px]
+        text-red-200
+        leading-none
+        whitespace-nowrap
+      "
+    >
+      EST. COMMUNITY
+    </p>
+  </motion.div>
+
+  {/* TITLE */}
+  <motion.h1
+    animate={{
+      scale: [1, 1.015, 1],
+      textShadow: [
+        '0 0 15px rgba(255,0,0,0.3)',
+        '0 0 35px rgba(255,0,0,0.9)',
+        '0 0 15px rgba(255,0,0,0.3)',
+      ],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 3.5,
+    }}
+    className="
+      relative
+      text-center
+      leading-[0.85]
+      font-black
+      uppercase
+      select-none
+    "
+  >
+
+    {/* BLUR GLOW */}
+    <span
+      className="
+        absolute inset-0
+        blur-lg
+        opacity-40
+        text-red-500
+      "
+    >
+      MFS
+    </span>
+
+    {/* MAIN TEXT */}
+    <motion.span
+      animate={{
+        backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 6,
+        ease: 'linear',
+      }}
+      className="
+        relative
+        block
+
+        text-[3.4rem]
+        xs:text-[4.4rem]
+        sm:text-[5.5rem]
+        md:text-[7rem]
+        lg:text-[7.8rem]
+
+        tracking-[4px]
+        sm:tracking-[7px]
+
+        text-transparent
+        bg-clip-text
+        bg-gradient-to-b
+        from-white
+        via-red-100
+        to-red-600
+
+        drop-shadow-[0_0_30px_rgba(255,0,0,0.65)]
+
+        bg-[length:200%_200%]
+      "
+    >
+      MFS
+    </motion.span>
+  </motion.h1>
+
+  {/* MINI DIVIDER */}
+  <motion.div
+    animate={{
+      width: ['70px', '120px', '70px'],
+      opacity: [0.35, 1, 0.35],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 3,
+    }}
+    className="
+      mt-2
+      h-[1.5px]
+      rounded-full
+      bg-gradient-to-r
+      from-transparent
+      via-red-500
+      to-transparent
+    "
+  />
+
+  {/* SUBTITLE */}
+  <motion.p
+    animate={{
+      opacity: [0.65, 1, 0.65],
+      letterSpacing: [
+        '0.18em',
+        '0.28em',
+        '0.18em',
+      ],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 4,
+    }}
+    className="
+      mt-2
+
+      text-[8px]
+      xs:text-[9px]
+      sm:text-[10px]
+      md:text-xs
+
+      uppercase
+      font-semibold
+      text-gray-300
+      text-center
+
+      leading-none
+
+      max-w-full
+      whitespace-nowrap
+    "
+  >
+    Made From Struggle
+  </motion.p>
+
+  {/* MOTTO */}
+  <motion.div
+    animate={{
+      opacity: [0.35, 0.8, 0.35],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 2.5,
+    }}
+    className="
+      mt-2.5
+      flex items-center
+      justify-center
+      gap-1.5
+      flex-wrap
+    "
+  >
+    {['Brotherhood', 'Loyalty', 'Respect'].map((text, i) => (
+      <div
+        key={i}
+        className="
+          px-2 py-[5px]
+          rounded-full
+          border border-white/10
+          bg-white/[0.03]
+          backdrop-blur-xl
+        "
+      >
+        <span
+          className="
+            text-[7px]
+            sm:text-[8px]
+            uppercase
+            tracking-[1.5px]
+            text-red-300
+            whitespace-nowrap
+          "
+        >
+          {text}
+        </span>
+      </div>
+    ))}
+  </motion.div>
+
+</div>
+
+
+
 
 {/* MAIN STAFF */}
 <div className="mt-8 sm:mt-12 w-full max-w-[1250px] px-2">
