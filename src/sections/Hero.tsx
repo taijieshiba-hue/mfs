@@ -664,7 +664,7 @@ useEffect(() => {
   }
 
   return (
-    <section className="relative h-screen overflow-hidden bg-black text-white">
+    <section className="relative min-h-screen overflow-x-hidden bg-black text-white">
 
       {/* BACKGROUND */}
       <motion.img
@@ -741,10 +741,11 @@ useEffect(() => {
   <div
     className="
       grid
-      grid-cols-2
-      sm:grid-cols-3
-      lg:grid-cols-5
-      gap-2 sm:gap-3
+      grid-cols-1
+xs:grid-cols-2
+md:grid-cols-3
+xl:grid-cols-5
+gap-3 sm:gap-4
     "
   >
 
@@ -773,7 +774,8 @@ useEffect(() => {
         onClick={() => setSelected(item)}
         className="
           group relative overflow-hidden
-          max-h-[320px]
+          min-h-[300px]
+sm:min-h-[340px]
           rounded-[22px] sm:rounded-[26px]
           border border-white/10
           bg-gradient-to-b
@@ -922,7 +924,7 @@ useEffect(() => {
 </div>
 
         {/* CONTENT */}
-        <div className="relative z-10 flex flex-col items-center px-3 pb-4 pt-2">
+        <div className="relative z-10 flex flex-col items-center px-3 sm:px-4 pb-5 pt-3">
 
           {/* AVATAR */}
           <div className="relative mt-3">
@@ -968,8 +970,9 @@ useEffect(() => {
               src={item.avatar}
               className="
                 relative
-                w-14 h-14
+                w-16 h-16
 sm:w-20 sm:h-20
+md:w-24 md:h-24
                 rounded-full
                 object-cover
                 border-[3px]
@@ -1013,8 +1016,9 @@ sm:w-20 sm:h-20
             }}
             className="
               mt-5
-              text-[11px]
+              text-xs
 sm:text-[15px]
+md:text-[16px]
               font-black
               uppercase
               tracking-[2px]
@@ -1030,8 +1034,10 @@ sm:text-[15px]
           <p
             className="
               mt-2
-text-[9px]
+text-[10px]
 sm:text-[11px]
+md:text-[12px]
+px-1
               text-gray-400
               text-center
               leading-relaxed
@@ -1125,12 +1131,12 @@ sm:text-[11px]
                 >
                   <img
                     src={item.avatar}
-                    className="w-8 h-8 sm:w-10 sm:h-10 mx-auto rounded-full mb-2 object-cover"
+                    className="w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-full mb-2 object-cover"
                   />
 
-                  <p className="text-[10px] sm:text-sm font-semibold truncate">{item.name}</p>
+                  <p className="text-[11px] sm:text-sm font-semibold truncate">{item.name}</p>
 
-                  <p className="text-[8px] sm:text-xs text-gray-500 truncate">{item.role}</p>
+                  <p className="text-[9px] sm:text-xs text-gray-500 truncate">{item.role}</p>
                 </motion.div>
               ))}
             </div>
@@ -1150,16 +1156,17 @@ sm:text-[11px]
                   whileHover={{ y: -5, scale: 1.05 }}
                   onClick={() => setSelected(item)}
                   className="
-  min-w-[82px]
-  xs:min-w-[90px]
-  sm:min-w-[140px]
-  p-2 sm:p-3
-  rounded-2xl
-  bg-white/5
-  border border-white/10
-  text-center
-  cursor-pointer
-  hover:bg-white/10
+min-w-[95px]
+sm:min-w-[120px]
+md:min-w-[145px]
+p-2 sm:p-3
+rounded-2xl
+bg-white/5
+border border-white/10
+text-center
+cursor-pointer
+hover:bg-white/10
+flex-shrink-0
 "
                 >
                   <img
@@ -1174,11 +1181,11 @@ sm:text-[11px]
 "
                   />
 
-                  <p className="text-[10px] sm:text-sm font-semibold truncate">
+                  <p className="text-[11px] sm:text-sm font-semibold truncate">
                     {item.name}
                   </p>
 
-                  <p className="text-[8px] sm:text-xs text-gray-500 truncate">
+                  <p className="text-[9px] sm:text-xs text-gray-500 truncate">
                     {item.role}
                   </p>
                 </motion.div>
