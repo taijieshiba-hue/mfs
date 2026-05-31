@@ -185,9 +185,9 @@ const otherMembers = [
   },
 
   {
-    name: 'seb',
+    name: 'Zane',
     role: 'Real G',
-    avatar: '/images/seb.png',
+    avatar: '/images/zane.png',
 
     description:
       'Recognized Hall of Fame.',
