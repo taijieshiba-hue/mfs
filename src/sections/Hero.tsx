@@ -219,6 +219,20 @@ const otherMembers = [
     profileUrl: 'https://discord.gg/VfGDjPxWvD',
     statusColor: 'bg-yellow-400',
   },
+
+
+
+      {
+    name: 'Eric Extrovert',
+    role: 'Real G',
+    avatar: '/images/eric.png',
+
+    description:
+      'Hall of Fame.',
+    discordUrl: 'https://discord.gg/VfGDjPxWvD',
+    profileUrl: 'https://discord.gg/VfGDjPxWvD',
+    statusColor: 'bg-yellow-400',
+  },
 ]
 
 const eliteMembers = [
@@ -283,17 +297,6 @@ const eliteMembers = [
     statusColor: 'bg-red-400',
   },
 
-    {
-    name: 'ria',
-    role: 'MFS Shawty',
-    avatar: '/images/ria.png',
-
-    description:
-      'Hall of Fame.',
-    discordUrl: 'https://discord.gg/VfGDjPxWvD',
-    profileUrl: 'https://discord.gg/VfGDjPxWvD',
-    statusColor: 'bg-red-400',
-  },
 
     {
     name: 'mob',
@@ -307,17 +310,6 @@ const eliteMembers = [
     statusColor: 'bg-red-400',
   },
 
-    {
-    name: 'shang',
-    role: 'MFS Shawty',
-    avatar: '/images/shang.png',
-
-    description:
-      'Hall of Fame.',
-    discordUrl: 'https://discord.gg/VfGDjPxWvD',
-    profileUrl: 'https://discord.gg/VfGDjPxWvD',
-    statusColor: 'bg-red-400',
-  },
 
       {
     name: 'bleed',
@@ -508,8 +500,8 @@ useEffect(() => {
 
   if (!otherEl || !eliteEl) return
 
-  const otherSpeed = 0.6
-  const eliteSpeed = 0.75
+  const otherSpeed = 2
+  const eliteSpeed = 2.5
 
   const animate = () => {
     if (!paused) {
@@ -1335,96 +1327,272 @@ px-1
 
 
 
-        {/* FIRST MARQUEE */}
-        <div
-          className="mt-10 w-full flex justify-center overflow-hidden"
-
+ 
+{/* FIRST MARQUEE */}
+<div className="mt-10 w-full flex justify-center overflow-hidden">
+  <div className="w-full max-w-[850px] overflow-hidden px-2">
+    <div ref={trackRef} className="flex gap-4 w-max">
+      {[...otherMembers, ...otherMembers].map((item, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ scale: 1.05 }}
+          onClick={() => setSelected(item)}
+          className="
+            min-w-[82px]
+            xs:min-w-[90px]
+            sm:min-w-[140px]
+            p-2 sm:p-3
+            rounded-2xl
+            bg-white/5
+            border border-white/10
+            text-center
+            cursor-pointer
+            hover:bg-white/10
+          "
         >
-          <div className="w-full max-w-[850px] overflow-hidden px-2">
-            <div ref={trackRef} className="flex gap-4 w-max">
-              {[...otherMembers, ...otherMembers].map((item, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.05 }}
-                  onClick={() => setSelected(item)}
-                  className="
-  min-w-[82px]
-  xs:min-w-[90px]
-  sm:min-w-[140px]
-  p-2 sm:p-3
-  rounded-2xl
-  bg-white/5
-  border border-white/10
-  text-center
-  cursor-pointer
-  hover:bg-white/10
-"
-                >
-                  <img
-                    src={item.avatar}
-                    className="w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-full mb-2 object-cover"
-                  />
+          <div className="relative w-fit mx-auto mb-2">
+            <motion.div
+              animate={{
+                scale: [1, 1.15, 1],
+                opacity: [0.2, 0.45, 0.2],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 3,
+              }}
+              className="absolute inset-0 rounded-full bg-red-500/20 blur-xl"
+            />
 
-                  <p className="text-[11px] sm:text-sm font-semibold truncate">{item.name}</p>
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{
+                repeat: Infinity,
+                duration: 12,
+                ease: 'linear',
+              }}
+              className="absolute inset-[-4px] rounded-full border border-white/10"
+            />
 
-                  <p className="text-[9px] sm:text-xs text-gray-500 truncate">{item.role}</p>
-                </motion.div>
-              ))}
-            </div>
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{
+                repeat: Infinity,
+                duration: 18,
+                ease: 'linear',
+              }}
+              className="absolute inset-0 scale-[1.15] rounded-full border border-red-500/20 border-dashed pointer-events-none"
+            />
+
+            <motion.img
+              src={item.avatar}
+              whileHover={{ scale: 1.08 }}
+              animate={{ y: [0, -2, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 3,
+              }}
+              className="
+                relative
+                w-10 h-10
+                sm:w-12 sm:h-12
+                rounded-full
+                object-cover
+                border-2
+                border-white/20
+                shadow-[0_0_20px_rgba(255,0,0,0.25)]
+              "
+            />
+
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [1, 0.5, 1],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+              }}
+              className={`
+                absolute
+                bottom-0
+                right-0
+                w-3 h-3
+                rounded-full
+                border-2
+                border-black
+                ${item.statusColor}
+              `}
+            />
           </div>
-        </div>
 
-        {/* SECOND LOOPING LINE */}
-        <div className="mt-3 w-full overflow-hidden flex justify-center">
-          <div className="w-full max-w-[850px] overflow-hidden px-2">
-<div
-  ref={eliteTrackRef}
-  className="flex gap-4 w-max"
->
-              {[...eliteMembers, ...eliteMembers, ...eliteMembers].map((item, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  onClick={() => setSelected(item)}
-                  className="
-min-w-[95px]
-sm:min-w-[120px]
-md:min-w-[145px]
-p-2 sm:p-3
-rounded-2xl
-bg-white/5
-border border-white/10
-text-center
-cursor-pointer
-hover:bg-white/10
-flex-shrink-0
-"
-                >
-                  <img
-                    src={item.avatar}
-                    className="
-  w-7 h-7
-  sm:w-10 sm:h-10
-  mx-auto
-  rounded-full
-  mb-2
-  object-cover
-"
-                  />
+          <p className="text-[11px] sm:text-sm font-semibold truncate">
+            {item.name}
+          </p>
 
-                  <p className="text-[11px] sm:text-sm font-semibold truncate">
-                    {item.name}
-                  </p>
+          <p className="text-[9px] sm:text-xs text-gray-500 truncate">
+            {item.role}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</div>
 
-                  <p className="text-[9px] sm:text-xs text-gray-500 truncate">
-                    {item.role}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+{/* SECOND LOOPING LINE */}
+<div className="mt-3 w-full overflow-hidden flex justify-center">
+  <div className="w-full max-w-[850px] overflow-hidden px-2">
+    <div
+      ref={eliteTrackRef}
+      className="flex gap-4 w-max"
+    >
+      {[...eliteMembers, ...eliteMembers, ...eliteMembers].map((item, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ y: -5, scale: 1.05 }}
+          onClick={() => setSelected(item)}
+          className="
+            relative
+            min-w-[95px]
+            sm:min-w-[120px]
+            md:min-w-[145px]
+            p-2 sm:p-3
+            rounded-2xl
+            bg-white/5
+            border border-white/10
+            text-center
+            cursor-pointer
+            hover:bg-white/10
+            flex-shrink-0
+            overflow-hidden
+          "
+        >
+          <motion.div
+            animate={{
+              opacity: [0.08, 0.22, 0.08],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 3,
+            }}
+            className="
+              absolute inset-0
+              bg-gradient-to-r
+              from-red-500/10
+              via-transparent
+              to-pink-500/10
+              pointer-events-none
+            "
+          />
+
+          <div className="relative w-fit mx-auto mb-2">
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.25, 0.55, 0.25],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 2.8,
+              }}
+              className="
+                absolute inset-0
+                rounded-full
+                bg-gradient-to-r
+                from-red-500/30
+                via-pink-500/25
+                to-red-500/30
+                blur-xl
+              "
+            />
+
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{
+                repeat: Infinity,
+                duration: 8,
+                ease: 'linear',
+              }}
+              className="
+                absolute
+                inset-[-4px]
+                rounded-full
+                border
+                border-red-500/20
+              "
+            />
+
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{
+                repeat: Infinity,
+                duration: 14,
+                ease: 'linear',
+              }}
+              className="
+                absolute
+                inset-[-8px]
+                rounded-full
+                border
+                border-pink-500/20
+                border-dashed
+              "
+            />
+
+            <motion.img
+              src={item.avatar}
+              whileHover={{ scale: 1.1 }}
+              animate={{ y: [0, -2, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 3,
+              }}
+              className="
+                relative
+                w-7 h-7
+                sm:w-10 sm:h-10
+                rounded-full
+                object-cover
+                border-2
+                border-white/20
+                shadow-[0_0_25px_rgba(255,0,80,0.4)]
+              "
+            />
+
+            <motion.div
+              animate={{
+                scale: [1, 1.25, 1],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+              }}
+              className={`
+                absolute
+                bottom-0
+                right-0
+                w-2.5 h-2.5
+                rounded-full
+                border
+                border-black
+                ${item.statusColor}
+              `}
+            />
           </div>
-        </div>
-      </div>
+
+          <p className="text-[11px] sm:text-sm font-semibold truncate">
+            {item.name}
+          </p>
+
+          <p className="text-[9px] sm:text-xs text-gray-500 truncate">
+            {item.role}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</div>
+
+
 
       {/* ❤️ HEART BUTTON */}
       <motion.div
@@ -1956,6 +2124,7 @@ flex-shrink-0
   )}
 </AnimatePresence>
 
+      </div>
     </section>
   )
 }
