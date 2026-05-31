@@ -71,7 +71,7 @@ const mainStaff = [
   {
     name: 'bang',
     role: 'Owner',
-    avatar: '/images/sasuke.jpg',
+    avatar: '/images/ninebang.webp',
     banner: '/images/ninebanner.gif',
     color: 'bg-yellow-400',
     tiktokUrl: 'https://www.tiktok.com',
