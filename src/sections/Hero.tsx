@@ -184,6 +184,19 @@ const otherMembers = [
     statusColor: 'bg-yellow-400',
   },
 
+
+  {
+    name: 'yzu',
+    role: 'Hall of Fame',
+    avatar: '/images/yzu.png',
+
+    description:
+      'Dedicated and highly respected member.',
+    discordUrl: 'https://discord.gg/VfGDjPxWvD',
+    profileUrl: 'https://discord.gg/VfGDjPxWvD',
+    statusColor: 'bg-yellow-400',
+  },
+
   {
     name: 'Zane',
     role: 'Real G',
