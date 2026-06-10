@@ -71,7 +71,7 @@ const mainStaff = [
   {
     name: 'bang',
     role: 'Owner',
-    avatar: '/images/ninebang.webp',
+    avatar: '/images/nine14.gif',
     banner: '/images/ninebanner.gif',
     color: 'bg-yellow-400',
     tiktokUrl: 'https://www.tiktok.com',
@@ -140,6 +140,19 @@ const otherMembers = [
     name: 'raqqi',
     role: 'Hall of Fame',
     avatar: '/images/rz.png',
+
+    description:
+      'Recognized Hall of Fame.',
+    discordUrl: 'https://discord.gg/VfGDjPxWvD',
+    profileUrl: 'https://discord.gg/VfGDjPxWvD',
+    statusColor: 'bg-yellow-400',
+  },
+
+
+  {
+    name: 'shang',
+    role: 'Hall of Fame',
+    avatar: '/images/shang.png',
 
     description:
       'Recognized Hall of Fame.',
